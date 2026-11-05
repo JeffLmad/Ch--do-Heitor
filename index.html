@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chá do Heitor 💚 22/11/2026</title>
+<meta name="description" content="Você é nosso convidado para o Chá do Heitor! 22/11/2026 às 12h no Nova Guanabara.">
+<meta property="og:title" content="Chá do Heitor 💚">
+<meta property="og:description" content="22/11/2026 às 12h · Nova Guanabara, Duque de Caxias. Confirme sua presença!">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpolygon points='50,5 30,40 70,40' fill='%23C8A951'/%3E%3Cpolygon points='30,42 10,77 50,77' fill='%23C8A951'/%3E%3Cpolygon points='70,42 50,77 90,77' fill='%23C8A951'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="tf" viewBox="0 0 100 90">
+  <polygon points="50,4 31,40 69,40" fill="#C8A951"/>
+  <polygon points="31,44 12,80 50,80" fill="#C8A951"/>
+  <polygon points="69,44 50,80 88,80" fill="#C8A951"/>
+ </symbol>
+</svg>
+
+<header>
+ <svg class="tri" aria-hidden="true"><use href="#tf"/></svg>
+ <div class="hearts" aria-hidden="true">♥ ♥ ♡</div>
+ <h1>Chá do Heitor</h1>
+ <div class="sub-h">LITTLE HERO</div>
+ <p class="frase">It's dangerous to go alone! Take this...</p>
+ <span class="data-pill">22/11/2026 · 12h · Almoço</span>
+ <div id="count"></div>
+</header>
+
+<main>
+
+<section class="card" id="onde">
+ <h2><svg><use href="#tf"/></svg>Onde e quando</h2>
+ <p class="tag">Mapa da aventura</p>
+ <div class="info">
+  <p><strong>Data:</strong> domingo, 22/11/2026, às 12h (almoço)</p>
+  <p><strong>Local:</strong> Espaço de Festa do Nova Guanabara (indicação da Nina)<br>Duque de Caxias, RJ</p>
+  <p><a class="btn ouro" href="https://maps.google.com/?q=Espa%C3%A7o+de+Festa+Nova+Guanabara" target="_blank" rel="noopener">Abrir no mapa</a></p>
+ </div>
+
+ <h3 class="sub">Sobre o espaço</h3>
+ <ul class="lista">
+  <li>Banheiro no local</li>
+  <li>Espaço infantil: pula-pula e piscina de bolinhas</li>
+  <li><strong>Atenção: não tem estacionamento</strong></li>
+ </ul>
+
+ <h3 class="sub">Cardápio</h3>
+ <ul class="lista">
+  <li>Strogonoff + salada</li>
+  <li>Sobremesa: sorvete + docinhos</li>
+  <li>Bebidas: água, água com gás, refrigerante e suco de guaraná e maracujá</li>
+  <li>Gelo filtrado à vontade</li>
+ </ul>
+</section>
+
+<section class="card" id="presentes" style="scroll-margin-top:16px">
+ <h2><svg><use href="#tf"/></svg>Lista de presentes</h2>
+ <p class="tag">Inventário do pequeno herói</p>
+ <div class="tw">
+ <table>
+  <thead><tr><th>Presente</th><th>Status</th><th>Quem vai dar</th><th></th></tr></thead>
+  <tbody id="gifts"></tbody>
+ </table>
+ </div>
+ <div class="row" style="margin-top:18px">
+  <div><label for="novo">Adicionar presente</label><input id="novo" type="text" placeholder="Ex.: Banheira"></div>
+  <button class="btn ouro" id="addBtn">Adicionar</button>
+ </div>
+</section>
+
+<section class="card" id="rsvp">
+ <h2><svg><use href="#tf"/></svg>Confirme presença no WhatsApp</h2>
+ <p class="tag">Junte-se à party do Heitor</p>
+ <label for="nome">Nome completo</label>
+ <input id="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
+ <label for="qtd">Quantidade de pessoas</label>
+ <input id="qtd" type="number" min="1" max="20" value="1" inputmode="numeric">
+ <p id="rsvpErro" style="color:#9b3b2e;font-size:.9rem;margin-top:8px;min-height:1.2em" role="alert"></p>
+ <button class="btn" id="rsvpBtn" style="width:100%;margin-top:6px">Confirmar presença 💚</button>
+</section>
+
+</main>
+
+<footer>
+ <div class="paleta" aria-hidden="true"><i style="background:#6B7C5A"></i><i style="background:#FDF6E3"></i><i style="background:#E8DDC4"></i><i style="background:#C8A951"></i></div>
+ Obrigado por fazer parte da aventura do Heitor 💚<br><em>Heitor, o pequeno herói · 2026</em>
+</footer>
+
+<audio id="bgm" src="musica.mp3" loop preload="metadata"></audio>
+<button id="music" type="button" aria-label="Tocar música" aria-pressed="false">🎵</button>
+
+<div id="fab">
+ <button class="btn" id="goGifts">Lista de presentes 🎁</button>
+ <button class="btn ouro" id="share">Confirmar presença 💚</button>
+</div>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+ <div class="box">
+  <h3 id="mt">Você encontrou um item!</h3>
+  <p id="mp" style="font-size:.95rem"></p>
+  <label for="quem">Seu nome</label>
+  <input id="quem" type="text" placeholder="Quem vai dar este presente?">
+  <div class="acoes">
+   <button class="btn fantasma mini" id="cancel">Cancelar</button>
+   <button class="btn mini" id="ok">Confirmar</button>
+  </div>
+ </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
